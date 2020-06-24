@@ -39,4 +39,4 @@ ARG user_id=1000
 USER root
 WORKDIR /home/user
 EXPOSE 8888
-CMD ["jupyter" "lab" "--ip=0.0.0.0" "--port=8888" "--no-browser" "--allow-root"]
+CMD ["jupyter" "lab" "--ip=0.0.0.0" "--port=8888" "--no-browser" "--allow-root" "--ContentsManager.allow_hidden=True"]
