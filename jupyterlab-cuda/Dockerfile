@@ -25,8 +25,8 @@ RUN jupyter nbextension enable collapsible_headings/main --user
 COPY ./requirements.txt /
 RUN pip install -r /requirements.txt
 
-ARG USER_ID
-ARG GROUP_ID
+ARG USER_ID=1000
+ARG GROUP_ID=1000
 
 RUN addgroup --gid $GROUP_ID user
 RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
