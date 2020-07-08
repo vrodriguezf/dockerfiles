@@ -23,7 +23,7 @@ RUN jupyter nbextension enable collapsible_headings/main --user
 
 # Install from local requirements.txt located in the same folder as the Dockerfile
 RUN touch /requirements.txt
-COPY requirements.txt /
+COPY ./requirements.txt /
 RUN pip install -r /requirements.txt
 
 ARG USER_ID
