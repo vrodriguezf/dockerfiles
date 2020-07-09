@@ -21,20 +21,6 @@ RUN jupyter contrib nbextension install --user
 RUN jupyter nbextensions_configurator enable --user
 RUN jupyter nbextension enable collapsible_headings/main --user
 
-# Install from local requirements.txt located in the same folder as the Dockerfile
-COPY ./requirements.txt /
-RUN pip install -r /requirements.txt
-
-ARG USER_ID=1000
-ARG GROUP_ID=1000
-
-RUN addgroup --gid $GROUP_ID user
-RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
-
-#ARG user_id=1000
-#RUN useradd -ms /bin/bash user
-#RUN usermod -u $user_id user
-#RUN groupmod -g $user_id user
 RUN pip install --upgrade jupyterlab-git
 RUN pip install --upgrade jupyterlab-quickopen
 RUN jupyter labextension install @jupyter-voila/jupyterlab-preview
@@ -47,8 +33,18 @@ RUN pip install jupyterlab_code_formatter
 RUN jupyter serverextension enable --py jupyterlab_code_formatter
 RUN jupyter lab build
 
-#USER root
-USER user
+# Install from local requirements.txt located in the same folder as the Dockerfile
+COPY ./requirements.txt /
+RUN pip install -r /requirements.txt
+
+#ARG USER_ID=1000
+#ARG GROUP_ID=1000
+
+#RUN addgroup --gid $GROUP_ID user
+#RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
+#USER user
+
+USER root
 WORKDIR /home/user
 EXPOSE 8888
 CMD ["jupyter","lab","--ip=0.0.0.0","--port=8888","--no-browser","--allow-root","--ContentsManager.allow_hidden=True"]
