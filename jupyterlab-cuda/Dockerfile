@@ -33,10 +33,6 @@ RUN pip install jupyterlab_code_formatter
 RUN jupyter serverextension enable --py jupyterlab_code_formatter
 RUN jupyter lab build
 
-# Install from local requirements.txt located in the same folder as the Dockerfile
-COPY ./requirements.txt /
-RUN pip install -r /requirements.txt
-
 #ARG USER_ID=1000
 #ARG GROUP_ID=1000
 
@@ -44,7 +40,6 @@ RUN pip install -r /requirements.txt
 #RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
 #USER user
 
-USER root
-WORKDIR /home/user
+WORKDIR /
 EXPOSE 8888
 CMD ["jupyter","lab","--ip=0.0.0.0","--port=8888","--no-browser","--allow-root","--ContentsManager.allow_hidden=True"]
