@@ -14,6 +14,10 @@ RUN apt-get -y install curl
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
 RUN apt-get install -y nodejs
 
+# git global configuration
+RUN git config --global pull.rebase true
+RUN git config --global rebase.autoStash true 
+
 RUN pip install jupyter
 RUN pip install jupyterlab
 RUN pip install jupyter_contrib_nbextensions
@@ -26,7 +30,6 @@ RUN pip install --upgrade jupyterlab-quickopen
 RUN jupyter labextension install @jupyter-voila/jupyterlab-preview
 RUN jupyter labextension install @parente/jupyterlab-quickopen
 RUN jupyter labextension install @ijmbarr/jupyterlab_spellchecker
-RUN jupyter labextension install @krassowski/jupyterlab_go_to_definition
 RUN jupyter labextension install @aquirdturtle/collapsible_headings
 RUN jupyter labextension install @ryantam626/jupyterlab_code_formatter
 RUN pip install jupyterlab_code_formatter
