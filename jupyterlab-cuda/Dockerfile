@@ -27,13 +27,8 @@ RUN jupyter nbextension enable collapsible_headings/main --user
 
 RUN pip install --upgrade jupyterlab-git
 RUN pip install --upgrade jupyterlab-quickopen
-RUN jupyter labextension install @jupyter-voila/jupyterlab-preview
 RUN jupyter labextension install @parente/jupyterlab-quickopen
-RUN jupyter labextension install @ijmbarr/jupyterlab_spellchecker
 RUN jupyter labextension install @aquirdturtle/collapsible_headings
-RUN jupyter labextension install @ryantam626/jupyterlab_code_formatter
-RUN pip install jupyterlab_code_formatter
-RUN jupyter serverextension enable --py jupyterlab_code_formatter
 RUN jupyter lab build
 
 #ARG USER_ID=1000
