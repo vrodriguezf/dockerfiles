@@ -31,10 +31,12 @@ RUN jupyter labextension install @parente/jupyterlab-quickopen
 RUN jupyter labextension install @aquirdturtle/collapsible_headings
 RUN jupyter lab build
 
-
 # Environmental variables for wandb
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
+
+# Add the user settings. These should be copied by child images to the user folders
+ADD .jupyter/lab/user-settings /.jupyter/lab/user-settings
 
 EXPOSE 8888
 WORKDIR /
