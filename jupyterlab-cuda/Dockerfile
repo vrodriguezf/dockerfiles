@@ -31,18 +31,11 @@ RUN jupyter labextension install @parente/jupyterlab-quickopen
 RUN jupyter labextension install @aquirdturtle/collapsible_headings
 RUN jupyter lab build
 
-ARG USER_ID=1000
-ARG GROUP_ID=1000
-ARG USER=user
-
-RUN addgroup --gid $GROUP_ID user
-RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
 
 # Environmental variables for wandb
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
-#WORKDIR /
 EXPOSE 8888
-USER $USER
+WORKDIR /
 CMD ["jupyter","lab","--ip=0.0.0.0","--port=8888","--no-browser","--allow-root","--ContentsManager.allow_hidden=True"]
