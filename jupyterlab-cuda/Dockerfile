@@ -5,7 +5,7 @@ USER root
 RUN apt-get update
 RUN apt install -y python3
 RUN apt install -y python3-pip
-RUN pip3 install --upgrade pip
+RUN python3 -m pip install --upgrade pip
 RUN apt-get update
 RUN apt-get install -y python3-dev
 RUN apt-get install -y git
