@@ -47,7 +47,7 @@
     {
         "command": "kernelmenu:restart-and-clear",
         "keys": [
-            "Accel 0"
+            "0 0"
         ],
         "selector": "[data-jp-kernel-user]:focus"
     },
