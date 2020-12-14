@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.0-cudnn8-runtime-ubuntu20.04
+FROM nvidia/cuda:11.1-runtime-ubuntu20.04
 
 USER root
 
