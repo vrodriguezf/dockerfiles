@@ -35,6 +35,9 @@ RUN jupyter lab build
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
+# General pip packages
+RUN pip install --upgrade twine
+
 # Add the user settings. These should be copied by child images to the user folders
 ADD .jupyter/lab/user-settings /.jupyter/lab/user-settings
 
