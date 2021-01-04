@@ -14,7 +14,6 @@ RUN apt-get update
 RUN apt-get -y install curl
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
 RUN apt-get install -y nodejs
-RUN curl https://rclone.org/install.sh | sudo bash
 
 # git global configuration
 RUN git config --global pull.rebase true
