@@ -2,6 +2,7 @@ FROM nvidia/cuda:11.0-runtime-ubuntu20.04
 
 USER root
 
+# Ubuntu packages
 RUN apt-get update
 RUN apt install -y python3
 RUN apt install -y python3-pip
@@ -13,6 +14,7 @@ RUN apt-get update
 RUN apt-get -y install curl
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
 RUN apt-get install -y nodejs
+RUN curl https://rclone.org/install.sh | sudo bash
 
 # git global configuration
 RUN git config --global pull.rebase true
