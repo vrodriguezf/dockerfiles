@@ -14,7 +14,7 @@ services:
     environment:
       - WANDB_API_KEY=${WANDB_API_KEY} #*
     volumes:
-      - ./:/home/${USER_NAME}/work #*
+      - ${WORK_PATH}:/home/${USER_NAME}/work #*
       - ~/.gitconfig:/etc/gitconfig # Need to create this file!
       - ${LOCAL_DATA_PATH}:/home/${USER_NAME}/data/ #*
     deploy:
