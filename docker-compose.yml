@@ -3,7 +3,7 @@ services:
   jupyter:
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-base
       args:
         - USER_ID=${USER_ID} #* 
         - GROUP_ID=${GROUP_ID} #* 
