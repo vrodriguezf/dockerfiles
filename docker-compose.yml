@@ -2,7 +2,8 @@ version: "3"
 services:
   jupyter:
     build:
-      image: vrodriguezf/jupyterlab-cuda
+      context: ./
+      dockerfile: Dockerfile
       args:
         - USER_ID=${USER_ID} #* 
         - GROUP_ID=${GROUP_ID} #* 
