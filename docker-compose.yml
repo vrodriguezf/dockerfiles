@@ -12,6 +12,7 @@ services:
       - "${JUPYTER_PORT}:8888" #*
     expose:
       - "8888"
+      - "4000" # nbdev documentation
     environment:
       - WANDB_API_KEY=${WANDB_API_KEY} #*
     volumes:
