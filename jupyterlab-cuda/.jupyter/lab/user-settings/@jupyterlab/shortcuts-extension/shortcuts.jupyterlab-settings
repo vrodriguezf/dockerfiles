@@ -12,14 +12,14 @@
     {
         "command": "application:activate-next-tab",
         "keys": [
-                "Accel F12"
+                "Alt ArrowRight"
             ],
             "selector": "body"
     },
     {
         "command": "application:activate-previous-tab",
         "keys": [
-                "Accel F11"
+                "Alt ArrowLeft"
             ],
             "selector": "body"
     },
