@@ -19,8 +19,8 @@ RUN apt-get install -y nodejs
 RUN git config --global pull.rebase true
 RUN git config --global rebase.autoStash true 
 
-RUN pip install jupyter
-RUN pip install jupyterlab
+RUN pip install --upgrade jupyter
+RUN pip install --upgrade jupyterlab
 RUN pip install jupyter_contrib_nbextensions
 RUN jupyter contrib nbextension install --user
 RUN jupyter nbextensions_configurator enable --user
