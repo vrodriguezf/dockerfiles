@@ -26,11 +26,8 @@ RUN jupyter contrib nbextension install --user
 RUN jupyter nbextensions_configurator enable --user
 RUN jupyter nbextension enable collapsible_headings/main --user
 
-RUN pip install --upgrade jupyterlab-git
-RUN pip install --upgrade jupyterlab-quickopen
-RUN jupyter labextension install @parente/jupyterlab-quickopen
-# Update to 2.31
-RUN jupyter labextension install @aquirdturtle/collapsible_headings
+# Jupyterlab extensions
+RUN pip install --upgrade jupyterlab-git jupyterlab-quickopen aquirdturtle_collapsible_headings
 RUN jupyter lab build
 
 # Environmental variables for wandb
