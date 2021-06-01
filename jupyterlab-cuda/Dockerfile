@@ -26,8 +26,11 @@ RUN jupyter contrib nbextension install --user
 RUN jupyter nbextensions_configurator enable --user
 RUN jupyter nbextension enable collapsible_headings/main --user
 
-# Jupyterlab extensions
-RUN pip install --upgrade jupyterlab-git jupyterlab-quickopen aquirdturtle_collapsible_headings
+### Jupyterlab extensions
+RUN pip install --upgrade jupyterlab-git jupyterlab-quickopen aquirdturtle_collapsible_headings 
+# Jupyterlab lsp
+RUN pip install jupyterlab-lsp
+RUN pip install git+https://github.com/krassowski/python-language-server.git@main
 RUN jupyter lab build
 
 # Environmental variables for wandb
@@ -39,6 +42,10 @@ RUN pip install --upgrade twine keyrings.alt pynvml fastgpu
 
 # Add the user settings. These should be copied by child images to the user folders
 ADD .jupyter/lab/user-settings /.jupyter/lab/user-settings
+
+# Add ipython_config.py in /etc/ipython
+RUN mkdir /etc/ipython
+ADD .ipython_config.py /etc/ipython
 
 EXPOSE 8888
 WORKDIR /
