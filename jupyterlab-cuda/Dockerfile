@@ -45,7 +45,7 @@ ADD .jupyter/lab/user-settings /.jupyter/lab/user-settings
 
 # Add ipython_config.py in /etc/ipython
 RUN mkdir /etc/ipython
-ADD .ipython_config.py /etc/ipython
+ADD ipython_config.py /etc/ipython
 
 EXPOSE 8888
 WORKDIR /
