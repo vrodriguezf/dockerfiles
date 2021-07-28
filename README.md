@@ -1,7 +1,7 @@
 # dockerfiles
 Dockerfiles for my most frequent development environments
 
-It is recommended to use the file `docker-compose.yml`, along with an `.env` file with the following configuration
+To use the jupyterlab container, it is recommended to use the file `docker-compose.yml`, along with an `.env` file with the following configuration
 ```
 # The name of the docker-compose project
 COMPOSE_PROJECT_NAME=your_project_name
