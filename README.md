@@ -20,3 +20,6 @@ WANDB_API_KEY=your_wandb_api_key
 # List of comma separated GPU indices that will be available in the container (by default only 0, the first one)
 CUDA_VISIBLE_DEVICES=0
 ```
+
+Note: This is meant to be deployed in a system with at least one GPU. If your system does not have any, you'll have to change the previous docker-compose command to: docker-compose -f docker-compose-cpu.yml up -d --build
+
