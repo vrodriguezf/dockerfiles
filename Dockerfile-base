@@ -17,6 +17,10 @@ RUN chown -R $USER_ID:$GROUP_ID /home/$USER/.jupyter
 ###
 RUN pip install --upgrade nbdev wandb
 
+###
+# Login in Github CLI
+###
+
 # Git packages
 ENV LANG C.UTF-8
 
