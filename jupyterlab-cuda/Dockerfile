@@ -29,8 +29,8 @@ RUN jupyter nbextension enable collapsible_headings/main --user
 ### Jupyterlab extensions
 RUN pip install --upgrade jupyterlab-git jupyterlab-quickopen aquirdturtle_collapsible_headings 
 # Jupyterlab lsp
-RUN pip install jupyterlab-lsp
-RUN pip install git+https://github.com/krassowski/python-language-server.git@main
+#RUN pip install jupyterlab-lsp
+#RUN pip install git+https://github.com/krassowski/python-language-server.git@main
 RUN jupyter lab build
 
 # Environmental variables for wandb
