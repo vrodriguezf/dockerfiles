@@ -27,8 +27,8 @@ ENV LANG C.UTF-8
 # Editable packages
 RUN mkdir /home/$USER/lib
 #RUN cd /home/$USER/lib \
-#    && git clone https://github.com/vrodriguezf/timeseries.git \
-#    && cd timeseries \ 
+#    && git clone https://github.com/timeseriesAI/tsai.git \
+#    && cd tsai \ 
 #    && pip install -e .
 
 # Environmental variables for wandb
