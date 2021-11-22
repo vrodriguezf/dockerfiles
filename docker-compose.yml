@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 services:
   jupyter:
     build:
@@ -16,10 +16,13 @@ services:
     environment:
       - WANDB_API_KEY=${WANDB_API_KEY} #*
       - GH_TOKEN=${GH_TOKEN} #*
+      - CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES}
+      - WANDB_DIR=/home/${USER_NAME}/work
     volumes:
       - ${WORK_PATH}:/home/${USER_NAME}/work #*
       - ~/.gitconfig:/etc/gitconfig # Need to create this file!
       - ${LOCAL_DATA_PATH}:/home/${USER_NAME}/data/ #*
+    init: true
     deploy:
         replicas: 1
         restart_policy:

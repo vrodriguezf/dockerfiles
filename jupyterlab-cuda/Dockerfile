@@ -55,6 +55,9 @@ RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg \
 	&& apt update \
 	&& apt install gh
 
+# Change the shell to bash
+SHELL [ "/bin/bash", "--login", "-c" ]
+
 
 EXPOSE 8888
 WORKDIR /
