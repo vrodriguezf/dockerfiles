@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  jupyterlab-server:
+    build:
+      args:
+        - username=${USER_NAME}
+        - uid=${USER_ID}
+        - gid=${GROUP_ID}
+      context: ../
+      dockerfile: Dockerfile-conda
+    ports:
+      - "${JUPYTER_PORT}:8888"
+    runtime: nvidia
+    environment:
+      - WANDB_API_KEY=${WANDB_API_KEY} #*
+      - GH_TOKEN=${GH_TOKEN} #*
+      - CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES}
+      - WANDB_DIR=/home/${USER_NAME}/work
+    volumes:
+      - ./:/home/${USER}/work
+      - ${LOCAL_DATA_PATH}:/home/${USER_NAME}/data/ #*
+      - conda-env:/home/${USER_NAME}/env
+      - miniconda:/home/${USER_NAME}/miniconda3
+      - lib:/home/${USER_NAME}/lib
+    init: true
+    stdin_open: true
+    tty: true    
+
+volumes:
+  conda-env:
+  miniconda:
+  lib:
