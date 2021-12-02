@@ -15,6 +15,10 @@ USER_NAME=your_user_name
 JUPYTER_PORT=XXXX
 # The path to your data files to train/test the models
 LOCAL_DATA_PATH=/path/to/your/data
+# The W&B entity
+WANDB_ENTITY=
+# The W&B project
+WANDB_PROJECT=
 # The W&B personal API key (see https://wandb.ai/authorize)
 WANDB_API_KEY=your_wandb_api_key
 # List of comma separated GPU indices that will be available in the container (by default only 0, the first one)
