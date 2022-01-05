@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: jupyterlab-conda
+name: jupyterlab-cuda
 
 # Controls when the workflow will run
 on:
@@ -35,8 +35,11 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./jupyterlab-cuda
-          file: ./Dockerfile-conda
-          build-args:
-            - username=${USER_NAME}
-            - uid=${USER_ID}
-            - gid=${GROUP_ID}
+          file: ./Dockerfile
+          push: true
+          build-args: |
+            USER_ID=1000
+            GROUP_ID=1000
+            USER=victor
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/jupyterlab-cuda:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/jupyterlab-cuda:buildcache
