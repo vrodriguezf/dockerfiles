@@ -34,7 +34,7 @@ RUN adduser --disabled-password \
 USER $USER
 
 # Add the jupyterlab settings
-COPY --chown=$uid:$gid .jupyter $HOME/.jupyter
+COPY --chown=$uid:$gid compose/.jupyter $HOME/.jupyter
 
 # install miniconda
 ENV MINICONDA_VERSION 4.10.3
