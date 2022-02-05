@@ -83,8 +83,5 @@ ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
 # Make bash automatically activate the conda environment
 RUN echo "conda activate $ENV_PREFIX" >> ~/.bashrc
 
-# Ipython config
-#COPY --chown=$UID:$GID ./ipython_config.py $HOME
-
 # default command will be to launch JupyterLab server for development
 CMD [ "jupyter", "lab", "--no-browser", "--ip", "0.0.0.0", "--ContentsManager.allow_hidden=True"]
