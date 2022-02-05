@@ -1,9 +1,0 @@
-channels:
-  - defaults
-  - conda-forge
-  - nvidia
-  - rapidsai
-  - fastai
-
-dependencies:
-  - hdbscan
