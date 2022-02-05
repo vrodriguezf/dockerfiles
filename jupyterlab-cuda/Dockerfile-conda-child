@@ -1,4 +1,0 @@
-FROM dockerfiles_jupyterlab-server:latest
-
-COPY --chown=$UID:$GID compose/environment-child.yml /tmp/
-RUN mamba env update --prefix $ENV_PREFIX --file /tmp/environment-child.yml --prune
