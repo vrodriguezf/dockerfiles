@@ -20,5 +20,6 @@ dependencies:
   - pip:
      - jupyterlab-quickopen
      - aquirdturtle_collapsible_headings
+     - -r requirements.txt
   - python=3.8
   - wandb
