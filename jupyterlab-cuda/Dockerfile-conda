@@ -14,7 +14,7 @@ ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
 # Create a non-root user
-ARG username=al-khawarizmi
+ARG username=victor
 ARG uid=1000
 ARG gid=100
 ENV USER $username
