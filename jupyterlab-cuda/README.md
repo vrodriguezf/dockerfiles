@@ -1,6 +1,5 @@
-There are two images:
+There are two images to choose:
+- `Dockerfile-pip`: builds the image with pip-based dependencies. 
+- `Dockerfile-conda`: builds the image with conda-based dependencies. 
 
-- `Dockerfile`: builds the image with pip-based dependencies. It can be run without docker-compose
-- `Dockerfile-conda`: builds the image with conda-based dependencies. Needs to be run with `docker-compose` in the compose folder
-
-Both files need the folder `.jupyterlab`.
+Both files need to be copied into the root of your project, along with the `compose` folder. The `docker-compose.yml` file uses by default `Dockerfile-conda. If you want a full pip-based environment, chang the build attributes in that compose file
