@@ -16,7 +16,8 @@ ENV LANG=C.UTF-8
 # Create a non-root user
 ARG username=victor
 ARG uid=1000
-ARG gid=100
+ARG gid=1000
+
 ENV USER $username
 ENV UID $uid
 ENV GID $gid
