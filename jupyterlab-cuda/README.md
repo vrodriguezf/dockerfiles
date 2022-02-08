@@ -1,5 +1,10 @@
 There are two images to choose:
-- `Dockerfile-pip`: builds the image with pip-based dependencies. 
-- `Dockerfile-conda`: builds the image with conda-based dependencies. 
+- `Dockerfile-pip`: builds the image with full pip-based dependencies. Dependencies must be added to the Dockerfile, not in a separate file.
+- `Dockerfile-conda`: builds the image with conda-based dependencies (also allows pip dependencies). Dependencies are added in separate files to the dockerfile, both for `conda` based dependencies (in `compose/environment.yml`) and for `pip` (in `compose/requirements.txt`)
 
-Both files need to be copied into the root of your project, along with the `compose` folder. The `docker-compose.yml` file uses by default `Dockerfile-conda. If you want a full pip-based environment, chang the build attributes in that compose file
+Both files need to be copied into the root of your project, along with the `compose` folder. The `docker-compose.yml` inside the `compose` folder file uses by default `Dockerfile-conda`. If you want to use `Dockerfile-pip`, change the build attributes in that compose file.
+
+Once you have copied the file into your project, go to the compose folder and run
+```
+docker compose up -d
+```
