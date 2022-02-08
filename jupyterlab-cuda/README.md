@@ -1,3 +1,5 @@
+## jupyterlab-cuda
+
 There are two images to choose:
 - `Dockerfile-pip`: builds the image with full pip-based dependencies. Dependencies must be added to the Dockerfile, not in a separate file.
 - `Dockerfile-conda`: builds the image with conda-based dependencies (also allows pip dependencies). Dependencies are added in separate files to the dockerfile, both for `conda` based dependencies (in `compose/environment.yml`) and for `pip` (in `compose/requirements.txt`)
