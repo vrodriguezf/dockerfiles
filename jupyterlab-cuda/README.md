@@ -41,6 +41,6 @@ Then, open a terminal in the compose folder and run:
 docker compose up -d
 ```
 
-Finally, open a browser and go to `localhost:${JUPYTER_PORT}` to access the jupyterlab server (replace localhost with IP of your server in case you are working remotely).
+Finally, open a browser and go to `localhost:${JUPYTER_PORT}` to access the jupyterlab server (replace localhost with IP of your server in case you are working remotely). When asked for the access token, enter the value set as `$JUPYTER_TOKEN` in the `.env` file
 
 > Note: This image is meant to be built in a system with at least one GPU.
