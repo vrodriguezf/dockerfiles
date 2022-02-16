@@ -85,4 +85,5 @@ ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
 RUN echo "conda activate $ENV_PREFIX" >> ~/.bashrc
 
 # default command will be to launch JupyterLab server for development
-CMD [ "jupyter", "lab", "--no-browser", "--ip", "0.0.0.0", "--ContentsManager.allow_hidden=True"]
+ARG JUPYTER_TOKEN=1234
+CMD [ "jupyter", "lab", "--no-browser", "--ip", "0.0.0.0", "--ContentsManager.allow_hidden=True", "NotebookApp.token=${JUPYTER_TOKEN}"]
