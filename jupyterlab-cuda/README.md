@@ -17,7 +17,9 @@ GROUP_ID=your_numeric_id
 # The user name assigned to the user id
 USER_NAME=your_user_name
 # The port from which you want to access Jupyter lab
-JUPYTER_PORT=XXXX
+JUPYTER_PORT=
+# The token used to access (like a password)
+JUPYTER_PORT=
 # The path to your data files to train/test the models
 LOCAL_DATA_PATH=/path/to/your/data
 # The W&B entity
