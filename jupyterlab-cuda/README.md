@@ -19,7 +19,7 @@ USER_NAME=your_user_name
 # The port from which you want to access Jupyter lab
 JUPYTER_PORT=
 # The token used to access (like a password)
-JUPYTER_PORT=
+JUPYTER_TOKEN=
 # The path to your data files to train/test the models
 LOCAL_DATA_PATH=/path/to/your/data
 # The W&B entity
