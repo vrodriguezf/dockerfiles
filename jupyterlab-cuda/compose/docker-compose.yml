@@ -7,7 +7,7 @@ services:
         - username=${USER_NAME}
         - uid=${USER_ID}
         - gid=${GROUP_ID}
-        - JUPYTER_PORT=${JUPYTER_PORT}
+        - JUPYTER_TOKEN=${JUPYTER_TOKEN}
       context: ../
       dockerfile: Dockerfile-conda
     ports:
