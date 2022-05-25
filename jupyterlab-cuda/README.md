@@ -38,7 +38,7 @@ GH_TOKEN=your_github_pat
 
 Then, open a terminal in the compose folder and run:
 ```
-docker compose up -d
+docker-compose up -d
 ```
 
 Finally, open a browser and go to `localhost:${JUPYTER_PORT}` to access the jupyterlab server (replace localhost with IP of your server in case you are working remotely). When asked for the access token, enter the value set as `$JUPYTER_TOKEN` in the `.env` file
